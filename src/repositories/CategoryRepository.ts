@@ -19,6 +19,7 @@ export class CategoryRepository {
             description,
             created_at: new Date(),
         });
+
         this.categories.push(category);
         return category;
     }
@@ -29,5 +30,9 @@ export class CategoryRepository {
 
     findAll(): Category[] {
         return this.categories;
+    }
+
+    findByName(name: string): Category {
+        return this.categories.find((category) => category.name === name);
     }
 }
