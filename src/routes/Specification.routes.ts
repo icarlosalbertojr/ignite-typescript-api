@@ -8,4 +8,8 @@ specificationRoutes.post("/", (req: Request, res: Response) =>
     createCategoryController.handler(req, res)
 );
 
+specificationRoutes.get("/name/:name", (req: Request, res: Response) =>
+    createCategoryController.handler(req, res)
+);
+
 export { specificationRoutes };
