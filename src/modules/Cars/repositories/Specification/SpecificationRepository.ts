@@ -12,7 +12,7 @@ export class SpecificationRepository implements ISpecificationRepository {
         this.specifications = [];
     }
 
-    public getInstance(): ISpecificationRepository {
+    public static getInstance(): ISpecificationRepository {
         if (!SpecificationRepository.INTANCE) {
             SpecificationRepository.INTANCE = new SpecificationRepository();
         }
