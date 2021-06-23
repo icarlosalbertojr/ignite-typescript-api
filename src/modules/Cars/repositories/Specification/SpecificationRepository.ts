@@ -6,18 +6,29 @@ import {
 
 export class SpecificationRepository implements ISpecificationRepository {
     private specifications: Specification[];
+    private static INTANCE: SpecificationRepository;
 
-    constructor() {
+    private constructor() {
         this.specifications = [];
     }
 
-    findByName(name: string): Specification {
+    public getInstance(): ISpecificationRepository {
+        if (!SpecificationRepository.INTANCE) {
+            SpecificationRepository.INTANCE = new SpecificationRepository();
+        }
+        return SpecificationRepository.INTANCE;
+    }
+
+    public findByName(name: string): Specification {
         return this.specifications.find(
             (specification) => specification.name === name
         );
     }
 
-    create({ name, description }: ICreateSpecificationDTO): Specification {
+    public create({
+        name,
+        description,
+    }: ICreateSpecificationDTO): Specification {
         const specification = new Specification();
         Object.assign(specification, {
             name,
