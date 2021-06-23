@@ -1,9 +1,9 @@
-import { Category } from "../models/Category";
+import { Category } from "../../../models/Category";
 import {
     ICategoryRepository,
     ICreateCategoryDTO,
-} from "../repositories/ICategoryRepository";
-import { FindByNameCategoryService } from "./FindByNameCategoryService";
+} from "../../../repositories/Category/ICategoryRepository";
+import { FindByNameCategoryService } from "../FindByNameCategory/FindByNameCategoryService";
 
 export class CreateCategoryService {
     private categoryRepository: ICategoryRepository;

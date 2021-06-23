@@ -1,5 +1,5 @@
-import { Specification } from "../models/Specification";
-import { ISpecificationRepository } from "../repositories/ISpecificationRepository";
+import { Specification } from "../../../models/Specification";
+import { ISpecificationRepository } from "../../../repositories/Specification/ISpecificationRepository";
 
 export class FindByNameSpecificationService {
     private specificationRepository: ISpecificationRepository;

@@ -1,9 +1,9 @@
-import { Specification } from "../models/Specification";
+import { Specification } from "../../../models/Specification";
 import {
     ICreateSpecificationDTO,
     ISpecificationRepository,
-} from "../repositories/ISpecificationRepository";
-import { FindByNameSpecificationService } from "./FindByNameSpecificationService";
+} from "../../../repositories/Specification/ISpecificationRepository";
+import { FindByNameSpecificationService } from "../FindByNameSpecification/FindByNameSpecificationService";
 
 export class CreateSpecificationService {
     private specificationRepository: ISpecificationRepository;
