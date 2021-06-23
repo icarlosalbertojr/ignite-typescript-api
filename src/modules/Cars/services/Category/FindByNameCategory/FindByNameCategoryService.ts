@@ -1,10 +1,10 @@
 import { Category } from "../../../models/Category";
-import { CategoryRepository } from "../../../repositories/Category/CategoryRepository";
+import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
 
 export class FindByNameCategoryService {
-    private categoryRepository: CategoryRepository;
+    private categoryRepository: ICategoryRepository;
 
-    constructor(categoryRepository: CategoryRepository) {
+    constructor(categoryRepository: ICategoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 
