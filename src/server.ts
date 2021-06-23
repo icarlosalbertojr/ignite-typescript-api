@@ -1,13 +1,10 @@
 import express, { Express } from "express";
 
-import { categoriesRoutes } from "./routes/Categories.routes";
-import { specificationRoutes } from "./routes/Specification.routes";
+import { routes } from "./routes";
 
 const app: Express = express();
 
 app.use(express.json());
-
-app.use("/categories", categoriesRoutes);
-app.use("/specification", specificationRoutes);
+app.use(routes);
 
 app.listen(3001);
