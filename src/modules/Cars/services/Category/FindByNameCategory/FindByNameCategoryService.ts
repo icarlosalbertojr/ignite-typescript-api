@@ -1,5 +1,5 @@
-import { Category } from "../../models/Category";
-import { CategoryRepository } from "../../repositories/Category/CategoryRepository";
+import { Category } from "../../../models/Category";
+import { CategoryRepository } from "../../../repositories/Category/CategoryRepository";
 
 export class FindByNameCategoryService {
     private categoryRepository: CategoryRepository;

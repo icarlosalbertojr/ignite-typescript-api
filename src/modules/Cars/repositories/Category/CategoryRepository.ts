@@ -3,7 +3,7 @@ import { ICategoryRepository, ICreateCategoryDTO } from "./ICategoryRepository";
 
 export class CategoryRepository implements ICategoryRepository {
     private categories: Category[];
-    private static INSTANCE = null;
+    private static INSTANCE: CategoryRepository;
 
     private constructor() {
         this.categories = [];
@@ -11,9 +11,10 @@ export class CategoryRepository implements ICategoryRepository {
 
     // Singleton Pattern
     public static getInstance(): CategoryRepository {
-        return this.INSTANCE === null
-            ? new CategoryRepository()
-            : this.INSTANCE;
+        if (!CategoryRepository.INSTANCE) {
+            CategoryRepository.INSTANCE = new CategoryRepository();
+        }
+        return CategoryRepository.INSTANCE;
     }
 
     public create({ name, description }: ICreateCategoryDTO): Category {

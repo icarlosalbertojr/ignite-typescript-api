@@ -5,7 +5,11 @@ import { findAllCategoryController } from "../modules/Cars/services/Category/Fin
 
 const categoriesRoutes = Router();
 
-categoriesRoutes.post("/", createCategoryController.handler);
-categoriesRoutes.get("/", findAllCategoryController.handler);
+categoriesRoutes.post("/", (req, res) =>
+    createCategoryController.handler(req, res)
+);
+categoriesRoutes.get("/", (req, res) =>
+    findAllCategoryController.handler(req, res)
+);
 
 export { categoriesRoutes };

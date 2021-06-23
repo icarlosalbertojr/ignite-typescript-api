@@ -2,8 +2,8 @@ import { Request, Response, Router } from "express";
 
 import { Specification } from "../modules/Cars/models/Specification";
 import { SpecificationRepository } from "../modules/Cars/repositories/Specification/SpecificationRepository";
-import { CreateSpecificationService } from "../modules/Cars/services/Specification/CreateSpecificationService";
-import { FindByNameSpecificationService } from "../modules/Cars/services/Specification/FindByNameSpecificationService";
+import { CreateSpecificationService } from "../modules/Cars/services/Specification/CreateSpecification/CreateSpecificationService";
+import { FindByNameSpecificationService } from "../modules/Cars/services/Specification/FindByNameSpecification/FindByNameSpecificationService";
 
 const specificationRoutes = Router();
 const specificationRepository = new SpecificationRepository();
