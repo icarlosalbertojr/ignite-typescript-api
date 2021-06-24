@@ -11,7 +11,7 @@ export class ImportCategoryController {
 
     public handler(req: Request, res: Response): Response {
         const { file } = req;
-        console.log(file);
+        this.importCategoryService.execute(file);
         return res.send();
     }
 }
